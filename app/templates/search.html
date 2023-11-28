@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="m-3">Search results for, {{keyword}}</h1>
+{% if ismov %}
+{% for movie in res %}
+    {% include "movie_tile.html" %}
+{% endfor %}
+{% else %}
+{% for user in res %}
+    {% include "user_tile.html" %}
+{% endfor %}
+{% endif %}
+<br><br>
+{% if prev_url %}
+<a class="m-4" href="{{prev_url}}">Prev</a>
+{% endif %}
+{% if next_url %}
+<a class="m-4" href="{{next_url}}">Next</a>
+{% endif %}
+{% endblock %}

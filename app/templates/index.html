@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="text-center p-5" style="font-size: 8em">Binge</h1>
+{% for title, movies in carousels %}
+    {% set id = loop.index %}
+    {% include "_carousel.html" %}
+{% endfor %}
+{% endblock %}
